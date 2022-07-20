@@ -4,6 +4,9 @@ const empRouter = require('./routes/employee.route');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+var cors = require('cors');
+app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: false })); 
 app.use(bodyParser.json());
 //mongoose
@@ -17,5 +20,5 @@ mongoose.connect('mongodb+srv://jibisk:jbisk@cluster0.vs2pm.mongodb.net/employee
 
 app.use('/api/emp', empRouter)
 app.listen(4000, () => {
-    console.log('server is listening on port 4000...')
+    console.log('server is listening on port 4200...')
 })
